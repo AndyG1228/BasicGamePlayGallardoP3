@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public Transform projectileSpawnPoint;
 
     public float horizontalInput;
     public float verticalInput;
     public float speed = 20.0f;
-    public float xRange = 24;
+    public float xRange = 23;
     public float topRange = 16;
     public float bottomRange = -1;
 
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         //Launch a copied projectile from the player upon pressing spacebar
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
         }
     }
 }
